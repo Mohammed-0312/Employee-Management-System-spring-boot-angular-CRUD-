@@ -1,0 +1,98 @@
+/* Light mode styles (default) */
+body {
+  background-color: white;
+  color: black;
+}
+
+.wrapper {
+  min-height: 100vh; /* Ensure the entire viewport is covered */
+}
+
+.night-mode-btn {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Dark mode styles */
+.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+  min-height: 100vh; /* Cover the whole height */
+}
+
+.dark-theme .navbar {
+  background-color: #1c1c1c;
+}
+
+.dark-theme .table {
+  background-color: #ff7f50; /* Orange color for the table background */
+  color: #f5f5f5; /* Light text color */
+}
+
+.dark-theme .table thead {
+  background-color: #ff4500; /* Slightly darker orange for the header */
+  color: white;
+}
+
+.dark-theme .table tbody tr {
+  background-color: #ff7f50; /* Ensure orange rows */
+}
+
+.dark-theme .btn {
+  color: #e0e0e0;
+}
+
+.dark-theme .form-control {
+  background-color: #333;
+  color: white;
+}
+
+/* Dark mode placeholder text color */
+.dark-theme .form-control::placeholder {
+  color: #b0b0b0; /* Light gray color for better visibility */
+}
+.icon-large {
+  font-size: 50; /* Adjust size as needed */
+}
+/* Typing animation styles */
+.typing {
+  font-family: 'Courier New', Courier, monospace; /* Font for typing effect */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow text */
+  border-right: 2px solid; /* Simulates the blinking cursor */
+  animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite; /* Adjust timing as needed */
+  /* Adjust the width based on your text length */
+}
+
+/* Typing effect */
+@keyframes typing {
+  from {
+      width: 0; /* Start from no width */
+  }
+  to {
+      width: 100%; /* Expand to full width of the text */
+  }
+}
+
+/* Blinking cursor effect */
+@keyframes blink-caret {
+  from, to {
+      border-color: transparent; /* Make the border transparent at start and end */
+  }
+  50% {
+      border-color: black; /* Change cursor color at mid-point */
+  }
+}
+.password-input {
+  color: green; /* Text color inside the input field */
+  background-color: black; /* Optional: Set background color */
+}
+.btn-primary {
+  background-color: #28a745 !important; /* Custom green color */
+  border-color: #28a745 !important; /* Custom border color */
+}
+
+.btn-primary:hover {
+  background-color: #218838 !important; /* Darker green on hover */
+  border-color: #1e7e34 !important; /* Darker border on hover */
+}

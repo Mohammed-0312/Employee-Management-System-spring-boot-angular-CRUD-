@@ -1,0 +1,31 @@
+body.bg-aqua {
+    background-color: gray; /* Blue aqua background */
+    min-height: 100vh; /* Ensure the body takes the full viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+.employee-details {
+    background-color: black; /* Black background for the details section */
+    color: white; /* White text */
+    text-align: center; /* Center text */
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 10px; /* Optional: Rounded corners */
+    max-width: 600px; /* Optional: Set a maximum width for the content */
+    margin: 20px auto; /* Center the content horizontally */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.img-fluid {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px; /* Add some space after the image */
+}
+.back-button {
+    position: absolute; /* Use absolute positioning */
+    top: 20px; /* Adjust the vertical position as needed */
+    left: 20px; /* Adjust the horizontal position to move it further left */
+}

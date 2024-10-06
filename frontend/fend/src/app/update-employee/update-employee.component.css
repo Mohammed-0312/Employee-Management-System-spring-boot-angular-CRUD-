@@ -1,0 +1,24 @@
+.row {
+    background-color: #343a40; /* Dark background */
+    color: #ffffff; /* Light text color */
+    padding: 20px; /* Optional: Add padding for better spacing */
+}
+
+.body {
+    background-color: #495057; /* Dark background for the entire body */
+    min-height: 100vh; /* Ensure body covers full height */
+}
+
+.card {
+    background-color: #495057; /* Dark background for card */
+    border: none; /* Remove card border */
+}
+
+.text-light {
+    color: #ffffff; /* Light text color */
+}
+.back-button {
+    position: absolute; /* Use absolute positioning */
+    top: 20px; /* Adjust the vertical position as needed */
+    left: -290px; /* Adjust the horizontal position to move it further left */
+}

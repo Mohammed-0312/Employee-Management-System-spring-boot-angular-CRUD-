@@ -1,0 +1,96 @@
+<div [ngClass]="{ 'dark-theme': nightMode }" class="wrapper">
+  <nav class="navbar navbar-expand-sm bg-warning navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/employees">
+        <img src="logo.jpg" alt="Logo" style="width: 500px; height: 50px;">
+      </a>
+      <ul class="navbar-nav me-auto"></ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button (click)="logOut()" class="btn btn-dark">
+            <i class="fa-solid fa-power-off icon-large"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Add Employee Button -->
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-between align-items-center">
+        <a routerLink="/create-employee" routerLinkActive="active" class="btn btn-primary mr-3">➕ Add Employee</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Night Mode Button -->
+  <div class="container mt-3">
+    <button (click)="toggleNightMode()" class="btn btn-secondary night-mode-btn">
+      {{ nightMode ? '☀️ Day Mode' : '🌙 Night Mode' }}
+    </button>
+  </div>
+
+  <!-- Search and Sort -->
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-md-4">
+        <!-- Search Input -->
+        <input type="search" name="search" [(ngModel)]="searchText" placeholder="Search by name" class="form-control">
+      </div>
+      <div class="col-md-4">
+        <!-- Sort Dropdown -->
+        <select [(ngModel)]="sortKey" class="form-control">
+          <option value="" disabled selected>Order by...</option>
+          <option value="firstName">First Name</option>
+          <option value="lastName">Last Name</option>
+          <option value="emailId">Email Id</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <!-- Toggle Sort Order -->
+        <button (click)="toggleSortOrder()" class="btn btn-secondary">
+          {{ sortAscending ? 'Ascending' : 'Descending' }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Employee Table -->
+  <div class="container mt-3">
+    <div class="table-container">
+      <table [ngClass]="{'table-dark': nightMode, 'table-light': !nightMode}" class="table">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Id</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees | filter: searchText | orderBy: sortKey : sortAscending">
+            <td>{{ employee.firstName }}</td>
+            <td>{{ employee.lastName }}</td>
+            <td>{{ employee.emailId }}</td>
+            <td>
+              <button (click)="updateEmployee(employee.id)" class="btn btn-primary">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </button>
+              <button (click)="deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left: 10px">
+                <i class="fa-solid fa-user-minus"></i> Delete
+              </button>
+              <button (click)="employeeDetails(employee.id)" class="btn btn-primary" style="margin-left: 10px">
+                <i class="fa-solid fa-circle-info"></i>
+              </button>
+              <!-- New Vehicle Details Button -->
+              <button (click)="viewVehicle(employee.id)" class="btn btn-success" style="margin-left: 10px">
+                <i class="fa-solid fa-car"></i> View Vehicle
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

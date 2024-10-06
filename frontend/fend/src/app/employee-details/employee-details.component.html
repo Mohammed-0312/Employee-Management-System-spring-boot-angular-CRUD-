@@ -1,0 +1,24 @@
+<body class="bg-aqua"> <!-- Add this class to the body -->
+    <div class="text-left">
+        <a href="http://localhost:4200/employees" class="btn btn-secondary back-button">
+            <i class="fa-solid fa-arrow-left"></i> Back
+        </a>
+    </div>
+    
+    <h3 class="text-center"> View Employee Details</h3>
+    <div class="text-center">
+        <img src="person.jpg" alt="Employee" class="img-fluid" style="width: 150px; height: auto;"> <!-- Adjust image size as needed -->
+    </div>
+
+    <div class="employee-details text-center">
+        <div>
+            <label><b>First Name:</b></label> {{employee.firstName}}
+        </div>
+        <div>
+            <label><b>Last Name:</b></label> {{employee.lastName}}
+        </div>
+        <div>
+            <label><b>Email Id:</b></label> {{employee.emailId}}
+        </div>
+    </div>
+</body>
